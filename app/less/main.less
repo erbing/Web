@@ -1,0 +1,90 @@
+@main-color:#30353B;
+
+html{  
+  height:100%;  
+}
+
+body{
+	background: url(../images/bg04.jpg) no-repeat center top;
+	background-size: 100% 100%;
+	min-heigth: 100%; 
+	height:auto !important; 
+	height:100%; 
+}
+
+.wrapper{
+	margin: 0 auto;
+  overflow: hidden;
+  padding: 100px 0;
+  position: relative;
+}
+
+.main{
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+	
+	.main-left{
+		width: 280px;
+		float: left;
+		.panel-left-title{
+			height: 75px;
+			background: @main-color;
+			color: #ffffff;
+			border-top-left-radius: 5px;
+    	border-top-right-radius: 5px;
+			position: relative;
+			.userimg{
+				width: 40px;
+				height: 40px;
+				border-radius: 4px;
+				position: absolute;
+				top: 20px;
+				left: 20px;
+			}
+			.username{
+				font-size: 16px;
+				line-height: 16px;
+				position: absolute;
+				top: 20px;
+				left: 70px;
+			}
+			.userinfo{
+				font-size: 12px;
+				line-height: 12px;
+				position: absolute;
+				top: 45px;
+				left: 70px;
+				overflow: hidden;
+			}
+			.plusbtn{
+				position: absolute;
+				left: 250px;
+				top: 5px;
+			}
+		}
+
+		.panel-left-search{
+			background: @main-color;
+			position: relative;
+			height: 40px;
+			.search{
+				width: 240px;
+				height: 30px;
+				position: absolute;
+				left: 20px;
+				background: url(../images/icon/search.png) no-repeat 4px 5px #46494E;
+				color: #707173;
+				border: 1px solid @main-color;
+				border-radius: 5px;
+				text-indent: 30px;
+			}
+		}
+	}
+
+	.main-right{
+		width: 700px;
+		float: right;
+	}
+
+}

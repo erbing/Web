@@ -1,0 +1,11 @@
+{
+  "name": "html",
+  "private": true,
+  "dependencies": {
+    "Art-Reactor": "https://github.com/chinakids/Art-Reactor.git",
+    "jquery": "~1.11.1",
+    "modernizr": "~2.8.2",
+    "normalize.css": "~3.0.3",
+    "bootstrap": "~3.3.5"
+  }
+}
