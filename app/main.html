@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">  
 	<title>亿房即时通讯</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="js/lib/layer/skin/layer.css">
 </head>
 <body>
 
@@ -15,26 +17,624 @@
 
 				<div class="panel-left-title">
 						<img src="images/userimg.jpg" class="userimg">
-						<span class="username">改个名字你</span>
-						<span class="userinfo">梦想还是需要有的，万一实现了呢!</span>
+						<span class="username" id="username">改个名字你</span>
+						<span class="userinfo">梦想还是需要有梦想还是需要有的，万一实现了呢!</span>
+						
 						<span class="plusbtn" id="plusbtn">
 							<img src="images/icon/plus.png">
 						</span>
+
+						<!--选择下拉框-->
+						<div class="selectplus" style="display: none;">
+							<ul>
+								<li id="addfriends">
+									<img src="images/icon/list-friending.png">
+									<span>添加好友</span>
+								</li>
+								
+								<li id="creatgroup">
+									<img src="images/icon/list-group.png">
+									<span>创建高级群</span>
+								</li>
+
+								<li style="border-bottom: none;" id="usersetting">
+									<img src="images/icon/list-set.png">
+									<span>用户设置</span>
+								</li>
+							</ul>
+						</div>
+						
+						<!--修改用户名-->
+						<div id="changename" class="changename" style="display: none;">
+							<div class="changename-header">
+								<div class="changename-avatar">
+									<img src="images/avatar/tx-6.png">
+								</div>
+								<div class="changename-userinfo">
+									<p class="changename-name">改个名字你</p>
+									<p class="changename-info">梦想还是要有的，万一实现了呢！</p>
+								</div>
+							</div>
+
+							<div class="changename-body">
+
+								<div class="changename-body-title">基本信息
+									<span class="editor-info" id="editor-info">编辑</span>	
+								</div>
+
+								<div class="changename-body-info">
+									<ul>
+										<li>
+											<p>
+												<span>生日:</span>
+												2015年11月18日
+											</p>
+										</li>
+
+										<li>
+											<p><span>性别:</span>女</p>
+										</li>
+
+										<li>
+											<p><span>手机:</span>13295999511</p>
+										</li>
+
+										<li>
+											<p>
+												<span>邮箱:</span>
+												123456789@qq.com
+											</p>
+										</li>
+
+										<li>
+											<p>
+												<span>签名:</span>
+												梦想还是要有的，万一实现了呢
+											</p>
+										</li>
+									</ul>
+								</div>
+								
+							</div>
+						</div>
+
+						<!--添加朋友-->
+						<div class="addfriendsdom" style="display: none;">
+							
+							<div class="addfriends-title">
+								 添加好友
+							</div>
+
+							<div class="addfriends-body">
+								<div class="addfriends-body-img">
+									<img src="images/avatar/tx-6.png" />
+								</div>
+
+								<p class="addfriends-body-name">Zigzag</p>
+
+								<p class="addfriends-body-account">账号 : fdc01</p>
+
+								<p class="addfriends-body-btn">
+									<span class="continue-search">继续搜索</span>
+									<span class="remove-black">移除黑名单</span>
+								</p>	
+
+							</div>
+						</div>
+
 				</div>
 
 				<div class="panel-left-search">
 					<input type="text" value="搜索" id="search" class="search">
 				</div>
 
+				<div class="panel-left-list">
+					<ul class="panel-left-list-ul" id="#panel-left-list-ul">
+						<li class="chat-li active0">
+							<img src="images/icon/1.png" />
+						</li>
+						<li class="frends-li">
+							<img src="images/icon/2.png" />
+						</li>
+						<li class="group-li">
+							<img src="images/icon/3.png" />
+						</li>
+					</ul>
+				</div>
+
+				<div id="panel-left-body-content">
+
+					<div class="panel-left-body" style="display: none;">
+						<div class="string-messages">
+							<div class="messages-avatar">
+								<img src="images/icon/message.png" class="avatar-img">
+							</div>
+
+							<div class="messages-info">
+								<p class="messages-info-content">
+									<span class="messages-info-name">消息中心</span>
+									<b class="messages-info-time">16:50</b>
+								</p>
+
+								<p class="messages-info-content"> 
+									<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+								</p>
+							</div>
+						</div>
+						
+						<ul class="panel-left-body-list">
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-6.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Marry</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-5.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Jack</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+										<b class="messages-info-number">99</b>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-4.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Zigza</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-3.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Arron</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-2.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Tim</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-1.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Jobs</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+										<b class="messages-info-number">2</b>
+									</p>
+								</div>	
+							</li>
+						</ul>
+					</div>
+
+					<div class="panel-left-body" style="display: none;">
+
+						<div class="string-messages">
+							<div class="messages-avatar">
+								<img src="images/icon/Add-friends.png" class="avatar-img">
+							</div>
+
+							<div class="messages-info">
+								<p class="messages-info-content">
+									<span class="messages-info-name">添加好友</span>
+									<b class="messages-info-time">16:50</b>
+								</p>
+
+								<p class="messages-info-content"> 
+									<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+								</p>
+							</div>
+						</div>
+						
+						<div class="string-messages">
+							<div class="messages-avatar">
+								<img src="images/icon/Blacklist.png" class="avatar-img">
+							</div>
+
+							<div class="messages-info">
+								<p class="messages-info-content">
+									<span class="messages-info-name">黑名单</span>
+									<b class="messages-info-time">16:50</b>
+								</p>
+
+								<p class="messages-info-content"> 
+									<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+								</p>
+							</div>
+						</div>
+
+						<div class="string-messages">
+							<div class="messages-avatar">
+								<img src="images/icon/Phone.png" class="avatar-img">
+							</div>
+
+							<div class="messages-info">
+								<p class="messages-info-content">
+									<span class="messages-info-name">我的手机</span>
+									<b class="messages-info-time">16:50</b>
+								</p>
+
+								<p class="messages-info-content"> 
+									<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+								</p>
+							</div>
+						</div>
+
+						<ul class="panel-left-body-list">
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-6.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Marry</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-5.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Jack</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+										<b class="messages-info-number">99</b>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-4.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Zigza</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-3.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Arron</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-2.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Tim</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-1.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Jobs</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+										<b class="messages-info-number">2</b>
+									</p>
+								</div>	
+							</li>
+						</ul>
+					</div>
+						
+					<div class="panel-left-body" style="display: block;">
+						
+						<div class="string-messages">
+							<div class="messages-avatar">
+								<img src="images/icon/G-discuss.png" class="avatar-img">
+							</div>
+
+							<div class="messages-info">
+								<p class="messages-info-content">
+									<span class="messages-info-name">创建讨论组</span>
+									<b class="messages-info-time">16:50</b>
+								</p>
+
+								<p class="messages-info-content"> 
+									<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+								</p>
+							</div>
+						</div>
+
+						<div class="string-messages">
+							<div class="messages-avatar">
+								<img src="images/icon/G-group.png" class="avatar-img">
+							</div>
+
+							<div class="messages-info">
+								<p class="messages-info-content">
+									<span class="messages-info-name">创建高级群</span>
+									<b class="messages-info-time">16:50</b>
+								</p>
+
+								<p class="messages-info-content"> 
+									<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+								</p>
+							</div>
+						</div>
+						
+						<div class="string-messages">
+							<div class="messages-avatar">
+								<img src="images/icon/G-search.png" class="avatar-img">
+							</div>
+
+							<div class="messages-info">
+								<p class="messages-info-content">
+									<span class="messages-info-name">查找高级群</span>
+									<b class="messages-info-time">16:50</b>
+								</p>
+
+								<p class="messages-info-content"> 
+									<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+								</p>
+							</div>
+						</div>
+
+						<p class="G-group-text">高级群</p>
+						
+						<ul class="panel-left-body-list">
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-6.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Marry</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-3.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Arron</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+									</p>
+								</div>	
+							</li>
+
+							<li class="string-messages">
+								<div class="messages-avatar">
+									<img src="images/avatar/tx-1.png" class="avatar-img">
+								</div>
+
+								<div class="messages-info">
+									<p class="messages-info-content">
+										<span class="messages-info-name">Jobs</span>
+										<b class="messages-info-time">16:50</b>
+									</p>
+
+									<p class="messages-info-content"> 
+										<span class="messages-info-text">顺怀想加你为好友顺怀想加你为好友顺怀想加你为好友	</span>
+										<b class="messages-info-number">2</b>
+									</p>
+								</div>	
+							</li>
+
+						</ul>
+
+						<p class="G-group-text">讨论组</p>
+
+						
+					</div>
+
+				</div>
+
+				<div class="panel-left-change-bgimg">
+					<a href="###" class="change-bgimg-btn-left"></a>
+					<a href="###" class="change-bgimg-btn-right"></a>
+				</div>
+
 			</div>
 			
 			<div class="main-right">
-				456
+
+				<div class="main-right-title">
+					<span class="main-right-title-name">我的英文名字叫zigzag</span>
+					<button class="main-right-title-cloud">云记录</button>
+				</div>  
+
+				<div class="main-right-body-wrapper">
+
+					<div class="main-right-body">
+						
+
+						<div class="main-right-message-other">
+							<img src="images/avatar/tx-5.png" class="main-right-message-img">
+							<p class="main-right-message-name">你的名字叫zigzag</p>
+							<p class="main-right-message-text">这个是你发送的内容这个是你发送的内容
+这个是你发送的内容这个是你发送的内容这个是你发送的内容	
+							</p> 
+						</div>
+
+						<div class="main-right-message-time">
+							14:49
+						</div>
+						
+						<div class="main-right-message-self">
+							<img src="images/avatar/tx-6.png" class="main-right-message-img">
+							<p class="main-right-message-name">我的名字叫zigzag</p>
+							<p class="main-right-message-text">这个是我发送的内容</p>
+						</div>
+
+					</div>	
+
+					<div class="main-right-body-bg"> </div>
+
+				</div>
+
+				<div class="main-right-inputbox">
+					<div class="right-inputbox-file">
+						<span class="file-expression">
+							<img src="images/icon/expression.png">
+						</span>
+
+						<span class="file-folder">
+							<img src="images/icon/folder.png">
+						</span>
+					</div>	
+
+					<div class="right-inputbox-text">
+						<textarea id="" class="right-inputbox-text-area"></textarea>
+					</div>
+
+					<div class="right-inputbox-send">
+						<button class="inputbox-send-btn">发送</button>
+					</div>
+
+				</div>
+
 			</div>
 
 		</div>
 
 	</div>
+
+	<script src="js/lib/jquery/dist/jquery.min.js"></script>
+	<!--网易云信SDK引入-->
+	<script src="js/sdk/Web_SDK_Base_v2.0.0.js"></script>
+	<script src="js/sdk/Web_SDK_NIM_v2.0.0.js"></script>
+
+	<!--主页业务逻辑相关-->
+	<script src="js/main.js"></script>
+	<!--连入初始化SDK-->
+	<script src="js/sdk.js"></script>
+
+	
+	<!--layer 弹出层引入-->
+	<script src="js/lib/layer/src/layer.js"></script>
+
+	<!--部分组件（未确认是否使用）-->
+	<script src="js/widget/uiKit.js"></script>
 
 </body>
 </html>
